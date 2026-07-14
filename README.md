@@ -10,10 +10,16 @@ GCE-Net integrates **Graph Convolutional Networks (GCN)** with domain-adversaria
 
 | Method | Cold-start Accuracy | Std | Notes |
 |:---|:---:|:---:|:---|
-| **GCE-Net (Ordinal BCE, w2=1.5)** | **0.6519** | 0.0903 | Our best |
+| **GCE-Net (Ordinal BCE, w2=1.5)** | **0.6519** | **0.0903** | **Our best** |
 | GCE-Net (CE baseline) | 0.6444 | 0.1025 | Standard cross-entropy |
-| EEGNet (DE features) | 0.5111 | — | Same data, simpler model |
-| SVM-RBF (DE features) | 0.5778 | — | Classical ML baseline |
+| RGNN | 0.7920 | — | State-of-the-art |
+| BiHDM | 0.6740 | — | Hierarchical GNN |
+| BiDANN | 0.6220 | — | Domain adaptation |
+| DGCNN | 0.5880 | — | GNN-based |
+| STRNN | 0.5650 | — | RNN-based |
+| DBN | 0.5250 | — | Early deep learning |
+| SVM (DE features) | 0.4180 | — | Classical ML baseline |
+| Random Chance | 0.3333 | — | Theoretical lower bound |
 
 - **Inference**: 56 μs/sample (RTX 5090), 357K parameters
 - **Few-shot calibration**: Not beneficial at 6-12 samples (degrades by 1.9pp)
