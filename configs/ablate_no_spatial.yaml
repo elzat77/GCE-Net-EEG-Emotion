@@ -1,0 +1,53 @@
+data_path: "SEED"
+model_name: "gcenet"
+model:
+  n_classes: 3
+  n_domains: 15
+  dropout: 0.5
+  dropedge_p: 0.2
+training:
+  seed: 42
+  batch_size: 32
+  epochs: 50
+  lr: 0.001
+  cal_lr: 0.0003
+  early_stop_patience: 8
+  early_stop_min_epochs: 15
+  lr_factor: 0.5
+  lr_patience: 5
+loss:
+  lambda_dann1: 0.5
+  lambda_dann2: 0.5
+  lambda_supcon: 0.3
+  temperature: 0.2
+  label_smoothing: 0.1
+ablation:
+  use_gcn: true
+  use_dann1: true
+  use_dann2: true
+  use_supcon: true
+  use_spatial_pool: false
+paths:
+  extracted_features: "SEED/ExtractedFeatures"
+  preprocessed_eeg: "SEED/Preprocessed_EEG"
+  adjacency_matrix: "static/adjacency_62.pt"
+  runs: "runs"
+  checkpoints: "checkpoints"
+  results: "results"
+gcenet:
+  in_channels: 5
+  input_time: 200
+  target_time: 200
+  num_electrodes: 62
+  temp_filters: 40
+  gcn_hidden: 64
+  stage3_channels: 64
+  se_reduction: 4
+  supcon_dim: 128
+calibration:
+  per_class_ablation: [1, 2, 3, 5]
+  lora_rank: 4
+  lora_alpha: 1.0
+  stage_epochs: [10, 10, 10]
+  stage_patience: [2, 2, 3]
+  stage_lr_scale: [1.0, 0.3, 0.1]
