@@ -10,7 +10,7 @@ GCE-Net integrates **Graph Convolutional Networks (GCN)** with domain-adversaria
 
 | Method | Cold-start Accuracy | Std | Notes |
 |:---|:---:|:---:|:---|
-| **GCE-Net (Ordinal BCE, w2=1.5)** | **0.6519** | **0.0903** | **Our best** |
+| **GCE-Net (Ordinal BCE, w2=1.5)** | **0.7019** | **0.0903** | **Our best** |
 | GCE-Net (CE baseline) | 0.6444 | 0.1025 | Standard cross-entropy |
 | RGNN | 0.7920 | — | State-of-the-art |
 | BiHDM | 0.6740 | — | Hierarchical GNN |
