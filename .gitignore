@@ -4,10 +4,6 @@ results/
 results_old/
 results_backup.tar.gz
 
-# 开发工具
-.kilo/
-.kilocode/
-.kilo/
 
 # IDE
 anaconda_projects/
@@ -34,4 +30,4 @@ checkpoints/
 
 # 临时文件
 pic/
-改进.txt
+
